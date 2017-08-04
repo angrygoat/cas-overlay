@@ -20,14 +20,19 @@
 	the default authentication handler with | one implementing your approach 
 	for authenticating usernames and passwords. + -->
 
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:c="http://www.springframework.org/schema/c" xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:util="http://www.springframework.org/schema/util" xmlns:sec="http://www.springframework.org/schema/security"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
-       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
-       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/lang
+       http://www.springframework.org/schema/lang/spring-lang.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<!-- | The authentication manager defines security policy for authentication 
 		by specifying at a minimum | the authentication handlers that will be used 
@@ -211,28 +216,6 @@
             </map>
         </property>
     </bean>
-		
-	<!-- Retrieves user group membership from a configured set of user ids TODO: pull this out to an etc file of users -->
-	<!-- 
-	<bean id="groupAttributeRepository"
-		class="org.iplantc.cas.persondir.ConfigurableEntitlementResolver">
-		<property name="resultAttributeMapping">
-			<map>
-				<entry key="cn" value="entitlement" />
-			</map>
-		</property>
-		<property name="configuredUserIds">
-			<list>
-				<value></value>
-				<value></value>
-			</list>
-		</property>
-		<property name="configuredEntitlements">
-			<list>
-				<value>admin_group</value>
-			</list>
-		</property>
-	</bean> -->
 	
 
 
