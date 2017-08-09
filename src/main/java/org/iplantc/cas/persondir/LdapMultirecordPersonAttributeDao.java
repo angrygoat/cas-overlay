@@ -208,7 +208,7 @@ public final class LdapMultirecordPersonAttributeDao implements
 			return attributesFromSearchResult(uid,
 					performSearch(connection, buildQuery(uid)));
 		} finally {
-			LdapUtils.closeConnection(connection);
+			connection.close();
 		}
 	}
 
